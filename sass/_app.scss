@@ -1,0 +1,31 @@
+@use 'variable' as var;
+@use 'mixin' as mix;
+
+.header {
+  background-color: var.$navy;
+  @include mix.size(400px, 100px);
+
+  .toolbox {
+    background-color: var.$white;
+  }
+}
+
+.content {
+  display: flex;
+  .sidebar {
+    background-color: var.$green;
+    @include mix.size(150px, 250px);
+  }
+
+  .main {
+    background-color: var.$red;
+    @include mix.size(250px, 250px);
+  }
+}
+
+.footer {
+  background-color: var.$brown;
+  @include mix.size(400px, 100px);
+}
+
+
