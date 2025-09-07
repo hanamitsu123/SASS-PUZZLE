@@ -4,10 +4,23 @@
 .header {
   background-color: var.$navy;
   @include mix.size(400px, 100px);
-
-  .toolbox {
-    background-color: var.$white;
-  }
+  position: relative;
+    &__inner{
+      position: absolute;
+      background-color: var.$white;
+      padding: 10px;
+      gap: 10px;
+      display: flex;
+      top:20px;
+      right:20px;
+        .minibox {
+          @each $name, $color in var.$box-colors {
+            &--#{$name} {
+            @include mix.minibox($color);
+            }
+          }
+        }
+    }
 }
 
 .content {
@@ -27,5 +40,3 @@
   background-color: var.$brown;
   @include mix.size(400px, 100px);
 }
-
-
